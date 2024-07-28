@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Primer Mes Rosa Mariel</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeInContainer 2s ease-in-out;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #d6336c;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 30px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #d6336c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeIn 6s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #a3244d;
+        }
+
+        .history,
+        .images,
+        .poem,
+        .video,
+        .messages,
+        .song,
+        .timeline,
+        .gallery,
+        .promises,
+        .quiz,
+        .countdown {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .images img, .gallery img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .poem, .messages, .song, .timeline, .promises {
+            font-size: 1.2em;
+            color: #d6336c;
+            margin-top: 20px;
+        }
+
+        .video iframe {
+            width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .song audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .timeline, .promises, .quiz, .countdown {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline ul, .promises ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline ul li, .promises ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .timeline ul li:before, .promises ul li:before {
+            content: '•';
+            position: absolute;
+            left: -20px;
+            font-size: 2em;
+            color: #d6336c;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6f61;
+            transform: rotate(-45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6f61;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(-45deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(-45deg);
+            }
+            100% {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Feliz Primer Mes, Mi Amorrrr!</h1>
+    <p>Gracias por un mes lleno de amor y felicidad a distancia. Eres mi todo.</p>
+    <button onclick="showContent()">Click para ver más</button>
+    <div class="history" id="history">
+        <p>Aunque estamos lejos físicamente, nuestros corazones están más cerca que nunca. Este mes ha sido el comienzo de algo hermoso.</p>
+    </div>
+    <div class="images" id="images">
+        <img src="https://i.pinimg.com/originals/82/6b/e7/826be71ff4af0ab25854ae9483287e7f.jpg" alt="Imagen 1">
+        <img src="https://i.pinimg.com/originals/26/2d/58/262d5809a3290247230dd9796538f532.png" alt="Imagen 2">
+        <img src="https://i.pinimg.com/736x/67/00/f5/6700f5679bfbec2a745cf665d8b97352.jpg" alt="Imagen 3">
+    </div>
+    <div class="poem" id="poem">
+        <p>
+            "A través de la distancia, nuestro amor crece,<br>
+            cada día más fuerte, nunca decrece.<br>
+            Un mes ha pasado, y es solo el comienzo,<br>
+            de un amor que supera todo tiempo y silencio."
+        </p>
+    </div>
+    <div class="video" id="video">
+        <iframe src="./recursos/Y2meta.app-Reflexión - Palabras Sinceras para Un Amor a Distancia - Escúchalo y sabrás quien Te ama  de verdad.-(480p).mp4" allowfullscreen></iframe>
+    </div>
+    <div class="messages" id="messages">
+        <p>
+            Aunque nos separen kilómetros, mi corazón está contigo en cada momento. Te amo profundamente.
+        </p>
+    </div>
+    <div class="song" id="song">
+        <audio controls>
+            <source src="./recursos/Y2meta.app - arctic monkeys — i wanna be yours [sub. español & lyrics] (320 kbps).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div class="gallery" id="gallery">
+        <img src="./recursos/WhatsApp Image 2024-07-28 at 1.46.28 PM (1).jpeg" alt="Imagen 4">
+        <img src="./recursos/WhatsApp Image 2024-07-28 at 1.46.28 PM (2).jpeg" alt="Imagen 5">
+        <img src="./recursos/WhatsApp Image 2024-07-28 at 1.46.28 PM.jpeg" alt="Imagen 6">
+    </div>
+    <div class="timeline" id="timeline">
+        <h2>Nuestro Primer Mes Juntos a Distancia</h2>
+        <ul>
+            <li><strong>Día 1:</strong> Nuestro nuevo intento como pareja </li>
+            <li><strong>Semana 1:</strong> Primer intercambio de fotitos jsjsjs</li>
+            <li><strong>Semana 2:</strong> Compartimos nuestras canciones favoritas</li>
+            <li><strong>Semana 3:</strong> Planeamos nuestro primer encuentro</li>
+            <li><strong>Hoy:</strong> ¡Celebramos nuestro primer mes!</li>
+        </ul>
+    </div>
+    <div class="promises" id="promises">
+        <h2>Mis Promesas Para Nuestro Futuro Juntos</h2>
+        <ul>
+            <li>Estar siempre para ti, sin importar la distancia</li>
+            <li>Trabajar juntos para acortar la distancia</li>
+            <li>Mantener viva nuestra conexión con detalles diarios</li>
+            <li>Crecer juntos y apoyarnos en nuestros sueños</li>
+        </ul>
+    </div>
+    <div class="quiz" id="quiz">
+        <h2>¿Cuánto nos conocemos?</h2>
+        <div id="question"></div>
+        <button onclick="checkAnswer('A')">A</button>
+        <button onclick="checkAnswer('B')">B</button>
+        <p id="result"></p>
+    </div>
+    <div class="countdown" id="countdown">
+        <h2>Cuenta regresiva para nuestro segundo mes juntos</h2>
+        <p id="timer"></p>
+    </div>
+</div>
+
+<script>
+    function showContent() {
+        document.getElementById('history').style.display = 'block';
+        document.getElementById('images').style.display = 'block';
+        document.getElementById('poem').style.display = 'block';
+        document.getElementById('video').style.display = 'block';
+        document.getElementById('messages').style.display = 'block';
+        document.getElementById('song').style.display = 'block';
+        document.getElementById('timeline').style.display = 'block';
+        document.getElementById('gallery').style.display = 'block';
+        document.getElementById('promises').style.display = 'block';
+        document.getElementById('quiz').style.display = 'block';
+        document.getElementById('countdown').style.display = 'block';
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 500);
+
+    const questions = [
+        {q: "¿Cuál es mi color favorito?", a: "A. Negro", b: "B. Azul", correct: "A"},
+        {q: "¿Cuál es mi comida favorita?", a: "A. Pizza", b: "B. Lasaña", correct: "B"},
+        {q: "¿Cuál es mi hobby?", a: "A. Volleyball", b: "B. Fútbol", correct: "A"},
+        {q: "¿Cuál es mi estilo de ropa preferido?", a: "A. Casual", b: "B. Old Money", correct: "B"},
+        {q: "¿Cual es mi animal favorito", a: "A. Perro", b: "B. Gatos", correct: "A"}
+    ];
+    let currentQuestion = 0;
+
+    function showQuestion() {
+        const q = questions[currentQuestion];
+        document.getElementById('question').innerHTML = `${q.q}<br>A. ${q.a}<br>B. ${q.b}`;
+    }
+
+    function checkAnswer(answer) {
+        if (answer === questions[currentQuestion].correct) {
+            document.getElementById('result').innerHTML = "¡Correcto! Me conoces muy bien, mi amor.";
+        } else {
+            document.getElementById('result').innerHTML = "No es correcto, pero no importa. ¡Seguimos conociéndonos cada día más!";
+        }
+        currentQuestion = (currentQuestion + 1) % questions.length;
+        setTimeout(showQuestion, 2000);
+    }
+
+    function updateCountdown() {
+        const now = new Date();
+        const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, now.getDate());
+        const difference = nextMonth.getTime() - now.getTime();
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    showQuestion();
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
